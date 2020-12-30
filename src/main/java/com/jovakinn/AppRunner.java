@@ -5,6 +5,9 @@ import com.jovakinn.model.ConnectionInfo;
 import com.jovakinn.service.FileService;
 import com.jovakinn.util.Randomizer;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +39,28 @@ public class AppRunner {
         number = 12345;
 
         System.out.println(getSumByTypeFormat(number));
+
+        try {
+            witeStringUsingBufferedWritter();
+        } catch (IOException e) {
+            System.out.println("Something went wrong...");;
+        }
+    }
+
+    /*
+            write into a new file using BufferedReader...
+  */
+    public static void witeStringUsingBufferedWritter()
+            throws IOException {
+
+        String str = "And hello again... " + Randomizer.getRandomSex()
+                + " I thought you were dead , but you are " + Randomizer.getRandomBirthDay()
+                + " years old buddy.";
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter("connections.txt"));
+        writer.write(str);
+
+        writer.close();
     }
 
     private static int getSumByTypeFormat(int number) {
@@ -51,8 +76,8 @@ public class AppRunner {
     private static int getSumByDiv(int number) {
         int result = 0;
         while (number > 0){
-            result = result + number%10;
-            number = number/10;
+            result = result + number % 10;
+            number = number / 10;
         }
         return result;
     }
