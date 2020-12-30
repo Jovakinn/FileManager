@@ -1,6 +1,5 @@
 package com.jovakinn;
 
-
 import com.jovakinn.model.ConnectionInfo;
 import com.jovakinn.service.FileService;
 import com.jovakinn.util.Randomizer;
