@@ -1,7 +1,7 @@
 package com.jovakinn.model;
 
 
-class ConnectionInfo {
+public class ConnectionInfo {
 
     private Integer sessionId;
     private String ip;

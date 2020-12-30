@@ -44,6 +44,9 @@ public class AppRunner {
         } catch (IOException e) {
             System.out.println("Something went wrong...");;
         }
+
+        System.out.println(getSumByDiv(123));
+        System.out.println(getSumByTypeFormat(123));
     }
 
     /*
