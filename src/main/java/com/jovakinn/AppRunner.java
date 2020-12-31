@@ -7,8 +7,11 @@ import com.jovakinn.util.Randomizer;
 import java.io.*;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class AppRunner {
+    // declaring logger
+    public static final Logger LOGGER = Logger.getLogger(AppRunner.class.getName());
 
     public static void main( String[] args ) {
 
@@ -56,8 +59,19 @@ public class AppRunner {
        } catch (IOException e) {
            e.printStackTrace();
        }
-    }
 
+       try{
+           FileOutputStream fout = new FileOutputStream("test.txt");
+           String testString = "Test new year";
+           byte bytes[] = testString.getBytes();
+
+           fout.write(bytes);
+           fout.close();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+       LOGGER.info("Success year, hell yeah)");
+    }
     /*
             write into a new file using BufferedReader...
   */
