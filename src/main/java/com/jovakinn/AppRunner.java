@@ -49,8 +49,9 @@ public class AppRunner {
        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("test.txt"))) {
           String str = bufferedReader.readLine();
 
-          if (str != null) {
+          while (str != null) {
               System.out.println(str);
+              str = bufferedReader.readLine();
           }
        } catch (IOException e) {
            e.printStackTrace();
