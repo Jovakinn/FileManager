@@ -4,9 +4,7 @@ import com.jovakinn.model.ConnectionInfo;
 import com.jovakinn.service.FileService;
 import com.jovakinn.util.Randomizer;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Date;
 import java.util.List;
 
@@ -40,19 +38,29 @@ public class AppRunner {
         System.out.println(getSumByTypeFormat(number));
 
         try {
-            witeStringUsingBufferedWritter();
+            writeStringUsingBufferedWriter();
         } catch (IOException e) {
             System.out.println("Something went wrong...");;
         }
 
         System.out.println(getSumByDiv(123));
         System.out.println(getSumByTypeFormat(123));
+
+       try(BufferedReader bufferedReader = new BufferedReader(new FileReader("test.txt"))) {
+          String str = bufferedReader.readLine();
+
+          if (str != null) {
+              System.out.println(str);
+          }
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
     }
 
     /*
             write into a new file using BufferedReader...
   */
-    public static void witeStringUsingBufferedWritter()
+    public static void writeStringUsingBufferedWriter()
             throws IOException {
 
         String str = "And hello again... " + Randomizer.getRandomSex()

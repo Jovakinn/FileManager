@@ -16,6 +16,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>12</maven.compiler.source>
     <maven.compiler.target>12</maven.compiler.target>
+    <lombok.version>1.18.8</lombok.version>
+    <swagger.version>2.9.2</swagger.version>
+    <mockito.version>2.21.0</mockito.version>
   </properties>
 
   <dependencies>
@@ -26,10 +29,12 @@
       <version>[4.13.1,)</version>
     </dependency>
 
+    <!--LOMBOK-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.8</version>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
     </dependency>
 
   </dependencies>
